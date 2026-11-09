@@ -2,22 +2,113 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<title>دليل مُلهم</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل مُلهم | ثانوية سارة آل الشيخ</title>
 <style>
-body{font-family:system-ui;text-align:center;background:#fff7ed;padding:40px}
-h1{color:#ea580c}
-.card{background:white;padding:20px;border-radius:20px;max-width:500px;margin:20px auto}
-a{display:block;background:#ea580c;color:white;padding:15px;border-radius:12px;text-decoration:none;margin:10px 0}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Tahoma}
+body{background:#fff;color:#0A1931}
+header{background:#0A1931;color:#C9A227;padding:15px 20px;display:flex;justify-content:space-between;align-items:center}
+header b{font-size:22px}
+.hero{background:linear-gradient(180deg,#fff 0%,#EAF0F7 100%);padding:40px 20px;text-align:center;border-bottom:4px solid #C9A227}
+.hero h1{font-size:38px;color:#0A1931;line-height:1.3}
+.hero h1 span{color:#C9A227}
+.hero p{margin:12px 0;font-size:18px}
+.btn{background:#C9A227;color:#0A1931;padding:14px 30px;border:none;border-radius:30px;font-weight:bold;font-size:18px;cursor:pointer}
+.school{background:#0A1931;color:#fff;padding:12px;text-align:center}
+section{padding:30px 20px;max-width:900px;margin:auto}
+h2{color:#0A1931;border-right:6px solid #C9A227;padding-right:12px;margin-bottom:15px}
+.card{background:#F8F6EF;border:1px solid #E8D9A0;border-radius:16px;padding:18px;margin:12px 0}
+.card b{color:#0A1931}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.hero h1{font-size:28px}}
+.cat{cursor:pointer;background:#0A1931;color:#fff;padding:18px;border-radius:16px;text-align:center;font-weight:bold}
+.cat.active{background:#C9A227;color:#0A1931}
+.detail{display:none;background:#fff;border:2px solid #C9A227;border-radius:16px;padding:20px;margin-top:15px}
+.detail.show{display:block}
+input{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #ccc}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+td,th{border:1px solid #ddd;padding:10px;text-align:center}
+th{background:#0A1931;color:#fff}
+footer{background:#0A1931;color:#fff;text-align:center;padding:20px}
 </style>
 </head>
 <body>
-<h1>دليل مُلهم 💛</h1>
-<p>أهلاً فيك في دليلنا</p>
-<div class="card">
-<a href="#">ابدأ هنا</a>
-<a href="#">خدماتنا</a>
-<a href="#">تواصل معنا</a>
+<header><b>✦ جائزة مُلهم</b><span>الدورة الثالثة 1448هـ</span></header>
+<div class="hero">
+<h1>دليل جائزة <span>مُلهم</span><br>جائزة محافظ الطائف للتميز التعليمي</h1>
+<p>إلهامٌ يُصنع .. وتميّزٌ يُستدام</p>
+<p><b>ثانوية سارة آل الشيخ</b></p>
+<button class="btn" onclick="document.getElementById('cats').scrollIntoView({behavior:'smooth'})">ابدأي رحلتك الآن ⭐</button>
 </div>
-<p>تم إنشاء الموقع بنجاح ✨</p>
+<div class="school">منسقة التميز: أمل الزهراني &nbsp;•&nbsp; مديرة المدرسة: ياسمين البيشي</div>
+<section>
+<h2>1. وش هي جائزة مُلهم؟</h2>
+<div class="card">جائزة أطلقها سمو الأمير <b>فواز بن سلطان بن عبدالعزيز</b>، محافظ الطائف، بالشراكة مع غرفة الطائف.<br><br>هدفها بسيط: <b>ندور على المتميزين، ونحتفي فيهم، ونخلي قصصهم تلهم غيرهم.</b><br>مو شرط تكونين الأولى، الشرط تكونين تركتِ أثر.</div>
+</section>
+<section id="cats">
+<h2>2. من أنت؟ اضغطي على فئتك 👇</h2>
+<div class="grid">
+<div class="cat" onclick="showCat('طالبة')">👩‍🎓 أنا طالبة</div>
+<div class="cat" onclick="showCat('معلمة')">👩‍🏫 أنا معلمة</div>
+<div class="cat" onclick="showCat('تربوية')">⭐ أنا تربوية</div>
+<div class="cat" onclick="showCat('مدرسة')">🏫 أنا مدرسة</div>
+<div class="cat" onclick="showCat('تربية خاصة')">💛 طالبة تربية خاصة</div>
+<div class="cat" onclick="showCat('موظفة')">💼 أنا موظفة</div>
+<div class="cat" onclick="showCat('مبادرة')">💡 عندي مبادرة</div>
+<div class="cat" onclick="showCat('سفيرة')">🤝 أنا سفيرة</div>
+</div>
+<div id="detail" class="detail"></div>
+</section>
+<section>
+<h2>3. كيف يحسبون درجتك؟</h2>
+<table><tr><th>وش يقيمون؟</th><th>كم عليه؟</th></tr>
+<tr><td>قصتك وأثرك</td><td>30</td></tr>
+<tr><td>شواهدك وأدلتك</td><td>30</td></tr>
+<tr><td>إبداعك وتميزك</td><td>20</td></tr>
+<tr><td>استمرارك</td><td>20</td></tr>
+</table>
+<div class="card"><b>حاسبة الدرجات:</b><br>حطي درجاتك من 100 وشوفي نتيجتك
+<input type="number" id="s1" placeholder="قصتك وأثرك من 30">
+<input type="number" id="s2" placeholder="شواهدك من 30">
+<input type="number" id="s3" placeholder="إبداعك من 20">
+<input type="number" id="s4" placeholder="استمرارك من 20">
+<button class="btn" onclick="calc()">احسبي درجتي</button>
+<p id="res" style="margin-top:10px;font-weight:bold"></p></div>
+</section>
+<section>
+<h2>4. خطوات الترشيح - خطوة خطوة</h2>
+<div class="card"><b>1.</b> اختاري فئتك من فوق ☝️<br><b>2.</b> عبي بياناتك<br><b>3.</b> ارفعي فيديو + شواهد + قصتك<br><b>4.</b> احسبي درجتك<br><b>5.</b> اضغطي إرسال وخلاص!</div>
+</section>
+<section>
+<h2>5. جدولنا في ثانوية سارة آل الشيخ</h2>
+<div class="card">الأسبوع 1: شرح الجائزة<br>الأسبوع 2: اختيار المرشحات<br>الأسبوع 3: تصوير الفيديو<br>الأسبوع 4: مراجعة مع أ. أمل الزهراني<br>الأسبوع 5: الإرسال النهائي</div>
+</section>
+<section>
+<h2>6. كلمة منا لك</h2>
+<div class="card" style="text-align:center;font-size:18px">مُلهم مو لقب، مُلهم أثر تتركينه.<br>كل طالبة تحلم، وكل معلمة تلهم، هي مُلهمة.<br>ونحن في ثانوية سارة آل الشيخ نراكِ، ونفخر بكِ.</div>
+</section>
+<footer>ثانوية سارة آل الشيخ<br>منسقة التميز أمل الزهراني • مديرة المدرسة ياسمين البيشي<br>جائزة مُلهم - الدورة الثالثة 1448هـ</footer>
+<script>
+function showCat(type){
+let t={
+'طالبة':'<b>أنتِ طالبة متميزة، وش تسوين؟</b><br>1. فيديو 1 دقيقة: من أنتِ؟ وش تحبين؟<br>2. 3 شواهد: شهادة تفوق، مسابقة، تطوع<br>3. تزكيتين من معلمتين<br>4. قصة موقف واحد غير فيك شي',
+'معلمة':'<b>أنتِ معلمة متميزة، وش تسوين؟</b><br>1. فيديو درس واحد ممتع<br>2. قصة طالبة تغيرت بسببك<br>3. عملين لطالباتك: قبل وبعد<br>4. تزكية من مديرة المدرسة',
+'تربوية':'<b>أنتِ تربوية متميزة</b><br>1. مشروع واحد طورتي فيه فريقك<br>2. خطة تطوير + نتائجها<br>3. شهادات من زميلاتك',
+'مدرسة':'<b>نحن ثانوية سارة آل الشيخ</b><br>1. رؤيتنا للتميز<br>2. 3 مبادرات سويناها<br>3. نواتج التعلم كيف تحسنت<br>4. صور وفيديو للمدرسة',
+'تربية خاصة':'<b>أنتِ قصة تحدي وإلهام</b><br>1. فيديو قصتك<br>2. وش تحديتي؟ وش حققتي؟<br>3. تزكية من معلمتك و أهلك',
+'موظفة':'<b>أنتِ موظفة متميزة</b><br>1. وش عملك؟<br>2. كيف سهلتي عمل غيرك؟<br>3. تزكية من مديرتك',
+'مبادرة':'<b>عندك مبادرة؟</b><br>1. وش فكرتك؟<br>2. كم استفاد منها؟<br>3. صور ونتائج قبل وبعد',
+'سفيرة':'<b>أنتِ سفيرة مُلهم</b><br>1. كيف دعمتي التعليم؟<br>2. مبادرتك أو دعمك<br>3. أثرك في المجتمع'
+};
+let d=document.getElementById('detail'); d.innerHTML=t[type]; d.classList.add('show'); d.scrollIntoView({behavior:'smooth'});
+document.querySelectorAll('.cat').forEach(e=>e.classList.remove('active'));
+event.target.classList.add('active');
+}
+function calc(){
+let total=(+document.getElementById('s1').value||0)+(+document.getElementById('s2').value||0)+(+document.getElementById('s3').value||0)+(+document.getElementById('s4').value||0);
+let level=total>=90?'ذهبي ⭐⭐⭐':total>=80?'ممتاز':total>=70?'جيد جداً':'كملي، باقي لك شوي';
+document.getElementById('res').innerText='درجتك: '+total+' من 100 - '+level;
+}
+</script>
 </body>
 </html>
